@@ -17,7 +17,7 @@ pub fn is_palindrome(s: &str) -> bool {
     let v: Vec<char> = s.chars().collect();
     let to = v.len() / 2;
 
-    for i in (0..to) {
+    for i in 0..to {
         let start_index = i;
         let end_index = v.len() - i - 1;
 
@@ -38,8 +38,8 @@ pub fn is_palindrome(s: &str) -> bool {
 pub fn f(from: i32, to: i32) -> i32 {
     let mut result: i32 = 0;
 
-    for a in (from..to + 1) {
-        for b in (from..to + 1) {
+    for a in from..to + 1 {
+        for b in from..to + 1 {
             let product: i32 = a * b;
 
             if is_palindrome(&product.to_string()) && product > result {
